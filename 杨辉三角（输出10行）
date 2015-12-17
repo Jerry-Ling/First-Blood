@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+int i,j,a[10][10];
+for(i=0;i<10;i++)
+{
+a[i][0]=1;
+a[i][i]=1;
+}
+for(i=2;i<10;i++)
+{
+for(j=2;j<i;i++)
+a[i][j]=a[i-1][j-1]+a[i-1][j-2];
+}
+for(i=0;i<10;i++)
+{
+for(j=1;j<=i;j++)
+if(i==j) cout<<a[i][j];
+else
+cout<<a[i][j];
+}
+return 0;
+}
